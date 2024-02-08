@@ -1,6 +1,6 @@
 import { ReactTyped } from "react-typed";
 import Nav from "./Nav";
-import { motion, An } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Header () {
     return (

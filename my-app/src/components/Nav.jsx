@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { PiHamburgerLight } from "react-icons/pi";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Nav() {
 const[ nav, setNav ] = useState(false);
@@ -15,14 +15,36 @@ const handelNav = () => {
 
             <div>
                 <div onClick={handelNav}>
-                    { nav ? <CgClose className="menuIcon" /> : <PiHamburgerLight className="menuIcon"/> }
+                <AnimatePresence>
+                    { nav ? 
+                        <motion.div 
+                            initial={{ opacity:0, scale:"0" }}
+                            animate={{ opacity:1, scale:"1"}}
+                            exit={{ opacity:0, scale:"0,5" }}
+                            transition={{ ease:"easeInOut", duration:"1.4" }}
+                        >
+                        <CgClose className="menuIcon"/>
+                        </motion.div>
+                        : 
+                        <motion.div 
+                            initial={{ opacity:0, scale:"0" }}
+                            animate={{ opacity:1, scale:"1"}}
+                            exit={{ opacity:0, scale:"0,5" }}
+                            transition={{ ease:"easeInOut", duration:"1.4" }}
+                        > 
+                        <PiHamburgerLight className="menuIcon"/></motion.div>
+                    }
+                </AnimatePresence>
                 </div>
-
+                <AnimatePresence mode="popLayout">
                 {nav ?
+                    
                     <motion.div 
                         className="menuPopUp"
-                        initial={{opacity:0}}
-                        animate={{opacity:1}}
+                        initial={{ opacity:0, scale:"0" }}
+                        animate={{ opacity:1, scale:"1"}}
+                        exit={{ opacity:0, scale:"0,5" }}
+                        transition={{ ease:"easeInOut", duration:"1.4" }}
                     >
                         <ul>
                             <li>Home</li>
@@ -32,6 +54,7 @@ const handelNav = () => {
                         </ul>
                     </motion.div> : ""
                 }
+                </AnimatePresence>
             </div>
         </section>
 
