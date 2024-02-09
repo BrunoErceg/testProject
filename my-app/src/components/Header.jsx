@@ -33,7 +33,8 @@ export default function Header () {
             <motion.button
                 initial={{ y:"+40px", opacity: 0,}}
                 animate={{ y:"0px", opacity: 1, }}
-                transition={{ duration:"1", delay:"0.7", ease:"backInOut",}}
+                whileHover={{ scale: 1.2 }}
+                transition={{ duration:"1", delay:"0.7", ease:"backInOut", scale:{duration:"0.3"}}}
                 >
                 Contact me
             </motion.button>

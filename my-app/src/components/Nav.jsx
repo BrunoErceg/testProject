@@ -4,47 +4,27 @@ import { PiHamburgerLight } from "react-icons/pi";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Nav() {
-const[ nav, setNav ] = useState(false);
-const handelNav = () => {
-    setNav(!nav)
-}
+const[ navIsVisibel, setNavIsVisibel ] = useState(false);
+const handelNavIsVisibel = () => { setNavIsVisibel(!navIsVisibel)}
 
     return(
         <section className="nav">
             <h2 className="logo">BRUNO.</h2>
 
             <div>
-                <div onClick={handelNav}>
-                <AnimatePresence>
-                    { nav ? 
-                        <motion.div 
-                            initial={{ opacity:0, scale:"0" }}
-                            animate={{ opacity:1, scale:"1"}}
-                            exit={{ opacity:0, scale:"0,5" }}
-                            transition={{ ease:"easeInOut", duration:"1.4" }}
-                        >
-                        <CgClose className="menuIcon"/>
-                        </motion.div>
-                        : 
-                        <motion.div 
-                            initial={{ opacity:0, scale:"0" }}
-                            animate={{ opacity:1, scale:"1"}}
-                            exit={{ opacity:0, scale:"0,5" }}
-                            transition={{ ease:"easeInOut", duration:"1.4" }}
-                        > 
-                        <PiHamburgerLight className="menuIcon"/></motion.div>
-                    }
-                </AnimatePresence>
+                <div onClick={handelNavIsVisibel}>
+                    { navIsVisibel ? <CgClose className="menuIcon"/>:<PiHamburgerLight className="menuIcon"/>}
                 </div>
-                <AnimatePresence mode="popLayout">
-                {nav ?
-                    
+
+                <AnimatePresence>
+                {navIsVisibel && (
                     <motion.div 
                         className="menuPopUp"
-                        initial={{ opacity:0, scale:"0" }}
-                        animate={{ opacity:1, scale:"1"}}
-                        exit={{ opacity:0, scale:"0,5" }}
-                        transition={{ ease:"easeInOut", duration:"1.4" }}
+                        key="model"
+                        initial={{  opacity:0 }}
+                        animate={{ opacity:1}}
+                        exit={{ opacity:0 }}
+                        transition={{  duration:"1.3" }}
                     >
                         <ul>
                             <li>Home</li>
@@ -52,8 +32,8 @@ const handelNav = () => {
                             <li>Skills</li>
                             <li>Contact</li>
                         </ul>
-                    </motion.div> : ""
-                }
+                    </motion.div> 
+                )}
                 </AnimatePresence>
             </div>
         </section>
