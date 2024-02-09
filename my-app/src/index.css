@@ -83,7 +83,7 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  width: 99vw;
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
   padding: 30px !important;
@@ -94,6 +94,7 @@ button {
 }
 
 .nav div:has(.menuIcon) {
+  position: relative;
   z-index: 99;
 }
 
@@ -108,41 +109,40 @@ button {
 
 .menuPopUp {
   display:block;
-  position: absolute;
-  top: 80px;
-  right: 30px;
-  width: 220px;
-  height: 240px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
   padding: 0;
   margin: 0;
-  background-color: #00df9a;
+  background-color: #000;
+  border-left: 1px solid #121212 ;
   display: flex;
+  z-index: 98;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 98;
-  transition: all ease-in-out 1s;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 11px 42px -1px rgba(0,223,154,0.5);
-  -moz-box-shadow: 0px 11px 42px -1px rgba(0,223,154,0.5);
-  box-shadow: 0px 11px 42px -1px rgba(0,223,154,0.5);
 }
 
 .menuPopUp ul {
   display: flex;
+  width: 100%;
+  
   flex-direction: column;
-  align-items: center;
   list-style: none;
   padding: 0;
   margin: 0;
 } 
 
 .menuPopUp ul li {
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: #000;
+  font-size: 36px;
+  margin-bottom: 22px;
+  text-align: right;
+  color: #fff;
   font-weight: 600;
-  margin: 5px 0px; 
+  margin: 0; 
+  padding: 8px 30px 5px 0;
   cursor: pointer;
 }
 

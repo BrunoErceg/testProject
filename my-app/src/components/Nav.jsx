@@ -21,16 +21,36 @@ const handelNavIsVisibel = () => { setNavIsVisibel(!navIsVisibel)}
                     <motion.div 
                         className="menuPopUp"
                         key="model"
-                        initial={{  opacity:0 }}
-                        animate={{ opacity:1}}
-                        exit={{ opacity:0 }}
-                        transition={{  duration:"1.3" }}
+                        initial={{  x:320 }}
+                        animate={{ x:0 }}
+                        exit={{ x:320 }}
+                        transition={{  duration:"0.3", ease:"easeOut"}}
                     >
                         <ul>
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Skills</li>
-                            <li>Contact</li>
+                            <motion.li
+                                initial={{ background: "linear-gradient(90deg, rgba(0,0,0,1) 100%, rgba(0,223,154,1) 100%)"}}
+                                whileHover={{ background: "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,223,154,1) 0%)", color:"#000"}}
+                                transition={{  duration:"0.2", ease:"easeOut"}}
+                                >Home
+                            </motion.li>
+                            <motion.li
+                                initial={{ background: "linear-gradient(90deg, rgba(0,0,0,1) 100%, rgba(0,223,154,1) 100%)"}}
+                                whileHover={{ background: "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,223,154,1) 0%)", color:"#000"}}
+                                transition={{  duration:"0.2", ease:"easeOut"}}
+                                >About
+                            </motion.li>
+                            <motion.li
+                                initial={{ background: "linear-gradient(90deg, rgba(0,0,0,1) 100%, rgba(0,223,154,1) 100%)"}}
+                                whileHover={{ background: "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,223,154,1) 0%)", color:"#000"}}
+                                transition={{  duration:"0.2", ease:"easeOut"}}
+                                >Skills
+                            </motion.li>
+                            <motion.li
+                                initial={{ background: "linear-gradient(90deg, rgba(0,0,0,1) 100%, rgba(0,223,154,1) 100%)"}}
+                                whileHover={{ background: "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,223,154,1) 0%)", color:"#000"}}
+                                transition={{  duration:"0.2", ease:"easeOut"}}
+                                >Contact
+                            </motion.li>
                         </ul>
                     </motion.div> 
                 )}
