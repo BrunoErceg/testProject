@@ -12,9 +12,12 @@ const handelNavIsVisibel = () => { setNavIsVisibel(!navIsVisibel)}
             <h2 className="logo">BRUNO.</h2>
 
             <div>
-                <div onClick={handelNavIsVisibel}>
+                <motion.div
+                    onClick={handelNavIsVisibel} 
+                    whileHover={{scale:1.2, rotate:"10deg"}}
+                    >
                     { navIsVisibel ? <CgClose className="menuIcon"/>:<PiHamburgerLight className="menuIcon"/>}
-                </div>
+                </motion.div>
 
                 <AnimatePresence>
                 {navIsVisibel && (
