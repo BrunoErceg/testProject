@@ -9,7 +9,7 @@ const handelNavIsVisibel = () => { setNavIsVisibel(!navIsVisibel)}
 
     return(
         <section className="nav">
-            <h2 className="logo">BRUNO.</h2>
+            <h3 className="logo">BRUNO.</h3>
 
             <div>
                 <motion.div

@@ -27,6 +27,12 @@ h1 {
   margin: 5px 0px 20px 0px;
 }
 
+h2 {
+  font-weight: 600;
+  font-size: 48px;
+  margin: 5px 0px 20px 0px;
+}
+
 p {
   font-size: 16px;
   margin: 5px 0px 10px 0px;
@@ -73,6 +79,15 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1220px;
+  margin: auto;
 }
 
 /* Nav
