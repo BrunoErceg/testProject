@@ -1,6 +1,6 @@
 @import-normalize;
 
-/* Text
+/* TEXT
 --------------------- */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -33,10 +33,33 @@ h2 {
   margin: 5px 0px 20px 0px;
 }
 
+h3 {
+  font-weight: 600;
+  font-size: 32px;
+  margin: 5px 0px 16px 0px;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 24px;
+  margin: 5px 0px 10px 0px;
+}
+
 p {
   font-size: 16px;
   margin: 5px 0px 10px 0px;
 }
+
+/* -- Text modifaers -- */
+
+.text-color-white {
+  color: #fff;
+}
+
+.text-color-green {
+  color: #00df9a;
+}
+
 
 /* Moduels
 --------------------- */
@@ -53,24 +76,51 @@ button {
   cursor: pointer;
 }
 
+.icon {
+  font-size: 30px;
+}
+
+
 /* Color
 --------------------- */
 .bg-black {
   background-color: #000 !important;
 }
 
-.text-color-white {
-  color: #fff;
+
+/* Grid
+--------------------- */
+.container {
+  max-width: 1220px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.text-color-green {
-  color: #00df9a;
+.row {
+  display: flex;
 }
 
+.col {
+  margin: 10px 15px;
+  flex-grow: 1;
+}
 
+.container 
+
+.align-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
 /* Section type
 --------------------- */
+section {
+  padding: 50px 0;
+}
+
 .hero {
   background-color: #000000;
   background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23aeaeae' fill-opacity='0.11'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -81,14 +131,11 @@ button {
   align-items: center;
 }
 
-section {
-  padding: 50px 0;
+.about .col {
+  padding: 15px 10px 0 25px ;
+  border-left: solid 1px #00df9a;
 }
 
-.container {
-  max-width: 1220px;
-  margin: auto;
-}
 
 /* Nav
 --------------------- */
